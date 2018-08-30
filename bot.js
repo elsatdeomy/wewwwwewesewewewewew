@@ -313,8 +313,6 @@ client.on('guildMemberRemove', member => {
     client.channels.get('483276296949071902').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
 });
 
-
-
 client.on('message', function (message) {
     var messageParts = message.content.split(' ');
 
@@ -335,7 +333,7 @@ client.on('message', function (message) {
             break;
 case "-play":
         if(!message.guild.voiceConnection){
-            message.reply('I'm Not In A Voice Channel!');
+            message.reply('I\'m Not In A Voice Channel!');
         }else{
 //كود بدء الموسيقى مالك
         }
@@ -344,7 +342,5 @@ case "-play":
             break;
 }
 });
-
-		    
 		    
 client.login(process.env.BOT_TOKEN);
