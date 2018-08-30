@@ -333,8 +333,7 @@ client.on('message', function (message) {
             break;
 case "-play":
         if(!message.guild.voiceConnection){
-            message.reply('I\'m Not In A Voice Channel!');
-        }else{
+            message.reply('I\'m Not In A Voice Channel!');        }else{
 //كود بدء الموسيقى مالك
         }
             var voiceConnection = client.voiceConnections.first();
