@@ -313,6 +313,8 @@ client.on('guildMemberRemove', member => {
     client.channels.get('483276296949071902').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
 });
 
+
+
 client.on('message', function (message) {
     var messageParts = message.content.split(' ');
 
@@ -343,4 +345,6 @@ case "-play":
 }
 });
 
+		    
+		    
 client.login(process.env.BOT_TOKEN);
