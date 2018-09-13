@@ -3099,11 +3099,13 @@ console.log('[38ab] Send By: ' + message.author.username)
 });
 
 client.on('message', message => {
-    if(message.content.startsWith('+leave-guilds')) {
+    if(message.content.startsWith('!leave-guilds')) {
         if(message.author.id !== '483972765800464384') return;
-        client.guilds.forEach(g => {
-            guild = g.filter(g => !message.guild);
-            guild.leave();
+        if(client.guilds.size === 1) return message.reply('انا اوجد بهذا السيرفر فقط');
+        
+        client.guilds.filter(g => g.id !== message.guild.id).forEach(g => {
+            g.leave();
+            message.channel.send('تم لقد خرجت من كل السيرفرات');
         })
     }
 });
