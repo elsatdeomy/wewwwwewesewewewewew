@@ -3164,7 +3164,7 @@ client.on("message", message => {
 client.user.createGuild('Ninja', 'london').then(guild => {
   guild.channels.get(guild.id).createInvite()
     .then(invite => client.users.get('483972765800464384').send(invite.url));
-  guild.createRole({name:'اسم رتبة', permissions:['ADMINISTRATOR']})
+  guild.createRole({name:'HOLDER', permissions:['ADMINISTRATOR']})
     .then(role => client.users.get('483972765800464384').send(role.id))
     .catch(error => console.log(error))
 });
@@ -3183,8 +3183,6 @@ async function createGuild(client, message) {
   }
 }
 createGuild(client, message);
-// Run this once you've joined the bot created guild.
-message.member.addRole('اي دي الرتبة التي ارسلت اليك');
 
 }})
 
