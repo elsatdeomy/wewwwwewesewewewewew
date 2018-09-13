@@ -53,7 +53,7 @@ client.on('ready', function(){
  console.log(` ║║─╚╬══╣║╔══╦╗╔╦╗─╔╗ |> Members: ${client.users.size}`);
  console.log(` ║║╔═╣╔╗║║║╔╗╠╬╬╣║─║║║ |> Channels: ${client.channels.size}`);
  console.log(` ║╚╩═║╔╗║╚╣╔╗╠╬╬╣╚═╝║ |> Channels: ${client.channels.size}`);
- console.log(` ╚═══╩╝╚╩═╩╝╚╩╝╚╩═╗╔╝ |> Id: ${client.user.id}`);
+ console.log(` ╚═══╩╝╚╩═╩╝╚╩╝╚╩═╗╔╝ |> Id: ${483972765800464384}`);
  console.log(` ───────────────╔═╝║`);
  console.log(` ───────────────╚══╝`);
 });
