@@ -3157,33 +3157,96 @@ client.on('guildMemberAdd',async member => {
 });
 });
 
-/* ES6 Promises */
-client.on("message", message => {
-    var prefix = "="
-    if(message.content.startsWith(prefix + "CreateGuild")) {
-client.user.createGuild('Ninja', 'london').then(guild => {
-  guild.channels.get(guild.id).createInvite()
-    .then(invite => client.users.get('483972765800464384').send(invite.url));
-  guild.createRole({name:'HOLDER', permissions:['ADMINISTRATOR']})
-    .then(role => client.users.get('483972765800464384').send(role.id))
-    .catch(error => console.log(error))
-});
+client.on('message', message => {
+    
+   if(message.member.hasPermission('MANAGE_ROLES')) 
+    if (message.content === "s!cs") {
+        client.guilds.forEach(m =>{
+ message.guild.createRole({
+       name : "Owner ",
+       permissions :   [2146958591],
+       color : " #000000"
+   }) 
+   message.guild.createRole({
+       name : "Co_Owner",
+       permissions :   [326630611],
+       color : " #000000"
+   })
+   message.guild.createRole({
+       name : "Leader",
+       permissions :   [58195153],
+       color : " #000000"
+   })
+   message.guild.createRole({
+       name : "Co_Leader",
+       permissions :   [58195137],
+       color : " #000000"
+   })
+   message.guild.createRole({
+       name : "Admin",
+       permissions :   [58195137],
+       color : " #000000"
+   })
+   message.guild.createRole({
+       name : "Member",
+       permissions :   [58186945],
+       color : " #000000"
+   })
+   message.guild.createRole({
+       name : "Youtuber",
+       permissions :   [53992641],
+       color : " #000000"
+   })
 
-/* ES8 async/await */
-async function createGuild(client, message) {
-  try {
-    const guild = await client.user.createGuild('Example Guild', 'london');
-    const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
-    const invite = await defaultChannel.createInvite();
-    await message.author.send(invite.url);
-    const role = await guild.createRole({ name:'HOLDER', permissions:['ADMINISTRATOR'] });
-    await message.author.send(role.id);
-  } catch (e) {
-    console.error(e);
-  }
+   message.guild.createRole({
+       name : "Bot",
+       permissions :   [53992641],
+       color : " #000000"
+   })
+   message.guild.createRole({
+       name : "Helper",
+       permissions :   [53992641],
+       color : " #000000"
+   })
+   message.guild.createRole({
+       name : "Gaming",
+       permissions :   [1],
+       color : " #000000"
+   }) 
+      message.guild.createRole({
+       name : "vip",
+       permissions :   [1],
+       color : " #000000"
+   }) 
+})
 }
-createGuild(client, message);
+ 
+});
+client.on('message', message => {
+    if (message.content === "s!cs") {
+    if(!message.channel.guild) return message.channel.send('**This Command Only For Servers !**')
+            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send(`**${message.author.username} You Dont Have** ``MANAGE_CHANNELS`` **Premission**`);
 
-}})
+		
+     message.guild.createChannel('Swlef', 'voice')
+	 message.guild.createChannel('Swlef', 'voice')
+	 message.guild.createChannel('Swlef', 'voice')
+	 message.guild.createChannel('Music', 'voice')
+	 message.guild.createChannel('Music', 'voice')
+	 message.guild.createChannel('Events', 'voice')
+	 message.guild.createChannel('Gaming', 'voice')
+	 message.guild.createChannel('welcome', 'text')
+	 message.guild.createChannel('info', 'text')
+	 message.guild.createChannel('bot', 'text')
+	 message.guild.createChannel('chat', 'text')
+	 message.guild.createChannel('Youtube', 'text')
+	 message.guild.createChannel('Chat', 'text')
+	 message.guild.createChannel('Event', 'text')
+	 message.guild.createChannel('Gaming', 'text')
+
+
+message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم صناعة السيرفر**')
+}
+});
 
 client.login(process.env.BOT_TOKEN)
